@@ -382,8 +382,9 @@ nav.show div.icon-close {
 #tattoos .image img {
   width: 18.7rem;
   height: 18rem;
-  margin-left: 1.5rem;
-  margin-right: 1rem;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 1rem;
   object-fit: cover;
 }
