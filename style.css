@@ -373,6 +373,13 @@ nav.show div.icon-close {
   margin-bottom: 0.75rem;
 }
 
+.card:hover{
+  background: rgb(235, 235, 235);
+  cursor: pointer;
+  font-size: var(--title-color);
+  color: var(--base-color-alt);
+}
+
 /*=============== TATTOS =============================*/
 
 #tattoos {
@@ -482,6 +489,9 @@ nav.show div.icon-close {
 }
 
 .pay:hover{
+   background: rgb(235, 235, 235);
+  cursor: pointer;
+  font-size: var(--title-color);
   color: var(--base-color-alt);
 }
 
