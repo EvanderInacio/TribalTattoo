@@ -185,7 +185,8 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: var(--base-color);
 }
 
@@ -200,14 +201,14 @@ nav ul li a::after {
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after {
+nav ul li a:hover::after,
+nav ul li a.active::after {
   width: 100%;
 }
 
 nav .menu ul {
   display: none;
 }
-
 /*=============== MENU MOBILE =============================*/
 nav.show .menu {
   opacity: 1;
