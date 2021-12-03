@@ -731,9 +731,25 @@ footer .logo{
  }
 
  /* About */
- #about .container {
+#about .container {
   grid-auto-flow: column;
   margin: auto;
+}
+
+#about .image{
+  order: 0;
+  max-width: 40rem;
+  text-align: right;
+}
+
+#about .text{
+  order: 1;
+  max-width: 25rem;
+  text-align: left;
+}
+
+#about .image::before{
+  max-height: 15rem;
 }
 
  /* Services */
