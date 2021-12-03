@@ -18,10 +18,9 @@ for (const link of links) {
 }
 
 /*mudar o header quando da pagina quando der scroll */
+const header = document.querySelector('#header')
+const navHeight = header.offsetHeight
 function changeHeightWhenScroll() {
-  const header = document.querySelector('#header')
-  const navHeight = header.offsetHeight
-
   if (window.scrollY >= navHeight) {
     // scroll maior que altura do header
     header.classList.add('scroll')
@@ -36,16 +35,15 @@ var swiper = new Swiper('.mySwiper', {
   slidesPerView: 1,
   pagination: {
     el: '.swiper-pagination',
-    type: 'progressbar',
-
+    type: 'progressbar'
   },
   navigation: {
     nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    prevEl: '.swiper-button-prev'
   },
   breakpoints: {
     767: {
-      slidesPerView: 2,
+      slidesPerView: 2
     }
   }
 })
@@ -72,9 +70,8 @@ scrollReveal.reveal(
 )
 
 /* Botão voltar para o top*/
+const backTopButton = document.querySelector('.back-top')
 function backToTop() {
-  const backTopButton = document.querySelector('.back-top')
-
   if (window.scrollY >= 550) {
     backTopButton.classList.add('show')
   } else {
@@ -82,8 +79,34 @@ function backToTop() {
   }
 }
 
+/* Menu ativo conforme a seção visivel */
+const sections = document.querySelectorAll('main section[id]')
+function activeMenu() {
+  const checkpoint = window.pageYOffset + (window.innerHeight / 8) * 4
+
+  for (const section of sections) {
+    const sectionTop = section.offsetTop
+    const sectionHeight = section.offsetHeight
+    const sectionId = section.getAttribute('id')
+
+    const checkpointStart = checkpoint >= sectionTop
+    const checkpointEnd = checkpoint <= sectionTop + sectionHeight
+
+    if (checkpointStart && checkpointEnd) {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.add('active')
+    } else {
+      document
+        .querySelector('nav ul li a[href*=' + sectionId + ']')
+        .classList.remove('active')
+    }
+  }
+}
+
 /* When Scroll (functions) */
 window.addEventListener('scroll', function () {
   changeHeightWhenScroll()
   backToTop()
+  activeMenu()
 })
