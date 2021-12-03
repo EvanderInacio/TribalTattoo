@@ -209,6 +209,7 @@ nav ul li a.active::after {
 nav .menu ul {
   display: none;
 }
+
 /*=============== MENU MOBILE =============================*/
 nav.show .menu {
   opacity: 1;
@@ -390,6 +391,11 @@ nav.show div.icon-close {
   object-fit: cover;
 }
 
+#tattoos .image img:hover{
+  transform: translateY(-10px);
+  cursor: pointer;
+}
+
 /*=============== TESTIMONIALS =============================*/
 #testimonials {
   background: white;
@@ -473,6 +479,10 @@ nav.show div.icon-close {
 
 .pay h5 {
   font-size: 1.2rem;
+}
+
+.pay:hover{
+  color: var(--base-color-alt);
 }
 
 /*=============== CONTACT =============================*/
@@ -573,13 +583,203 @@ footer .social a:hover {
 }
 
 /*============= Responsivo =========================*/
+/* large devices: 768px > */
+@media (min-width: 768px) {
+ .container{
+   max-width: 730px;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 1.2rem;
+ }
+
+ .section{
+   padding: 10rem 0;
+ }
+
+  /* Layout */
+ main {
+    margin-top: var(--header-height);
+ }
+
+ /* Home */
+#home .image{
+ order: 0;
+ max-width: 50rem ;
+ 
+ align-items: left;
+}
+
+#home .text{
+ order: 1;
+ max-width: 50rem;
+ align-items: center;
+}
+
+.buttom{
+  height: 5rem;
+}
+ 
+ /* About */
+#about .image{
+  order: 1;
+  max-width: 40rem;
+  align-items: right;
+}
+
+#about .text{
+  order: 1;
+  max-width: 70rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+  align-items: center; 
+}
+
+ /* Tattoos */
+ #tattoos .image{
+   grid-template-columns: 1fr 1fr;
+ }
+
+  /* Testimonials */
+ #testimonials {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+/* Contact */
+#contact .container{
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+/* Footer */
+footer .container{
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .logo{
+  font-size: 2rem;
+}
+}
 
 /* large devices: 992px > */
 @media (min-width: 992px) {
-  :root {
-    --font-title: 2.25rem;
-    --subtitle-font-size: 1.125rem;
+  .container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .section {
+    padding: 10rem 0;
+  }
+  
+ /* Navigation*/
+ nav .menu{
+   opacity: 1;
+   visibility: visible;
+   top: 0;
+ }
+
+ nav .menu ul{
+   display: flex;
+   gap: 1.5rem;
+ }
+
+ nav .menu ul li a.title{
+   font: 700 0.875rem var(--title-font);
+ }
+
+ nav .toggle{
+   display: none;
+ }
+
+ /* Layout */
+ main {
+  margin-top: var(--header-height);
+}
+
+ /* Home */
+
+#home .container{
+    grid-auto-flow: column;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+ #home .image{
+   order: 1;
+   max-width: 40rem ;
+   align-items: right;
+ }
+
+ #home .text{
+   order: 0;
+   max-width: 30rem;
+   text-align: left;
+ }
+
+ /* About */
+ #about .container {
+  grid-auto-flow: column;
+  margin: auto;
+}
+
+ /* Services */
+.cards{
+  grid-template-columns: 1fr 1fr;
+}
+
+ /* Tattoos */
+#tattoos .image{
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+ /* Testimonials */
+#testimonials {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+ /* Payment */
+#payment .container{
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+/* Contact */
+#contact .container{
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+#contact .text{
+  order: 0;
+  max-width: 30rem; 
+}
+
+#contact .links{
+  order: 1;
+  max-width: 20rem;
+}
+
+/* Footer */
+footer .section{
+  padding: 3.658rem;
+}
+
+footer .container{
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+}
+
+footer .logo{
+  font-size: 2rem;
+}
+
 }
 
 /* large devices: 1200px > */
@@ -667,8 +867,11 @@ footer .social a:hover {
   }
 
   /* tattoos */
-  .image {
-    grid-template-columns: 1fr 1fr 1fr;
+  #tattoos .container .image {
+    width: 10rem;
+    margin-left: -3.2rem;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
   /* testimonials */
@@ -678,29 +881,27 @@ footer .social a:hover {
   }
 
   /* contact */
-  #contact .container{
-     grid-auto-flow: column;
-     align-items: center;
-   }
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
 
- #contact .text{
-     max-width: 25rem;
-   }
+  #contact .text {
+    max-width: 25rem;
+  }
 
+  /* footer */
+  footer .section {
+    padding: 3.75rem 0;
+  }
 
- /* footer */
- footer .section{
-   padding: 3.75rem 0;
- }
+  footer .container {
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
 
- footer .container{
-   grid-auto-flow: column;
-   align-items: center;
-   justify-content: space-between;
- }
-
- footer .logo{
-   font-size: 2.2rem;
- }
- 
+  footer .logo {
+    font-size: 2.2rem;
+  }
 }
