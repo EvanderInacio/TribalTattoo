@@ -17,6 +17,10 @@
   <img alt="" src="assets/images/Preview.png" width="100%">
 </p>
 
+<h4 align="center"><a href="https://tribal-tattoo.netlify.app/">Clique para visitar o projeto</a></h4>
+
+-----
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
